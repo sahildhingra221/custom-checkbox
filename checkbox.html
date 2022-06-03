@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Radio</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: #000;
+        }
+        .radio-wrapper{
+            background-color:#fff;
+            max-width: 700px;
+            margin:0 auto;
+            padding:20px 10px;
+        }
+        .tick-box{
+            position:relative;
+            margin-left: auto;
+            width: 40px;
+        }
+        .show{
+            transition: all 0.2s ease-in-out;
+            width: 0px;
+            overflow: hidden;
+        }
+        .show::before{
+            content: '';
+            height: 15px;
+            position: absolute;
+            width: 15px;
+            border: 2px solid red;
+            top: 7px;
+            left: 2px;
+        }
+        .show-img{
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .show-img svg{
+            fill:red;
+        }
+        .custom-radio-button input{
+            display:none;
+        }
+        .custom-radio-button input:checked + label .show{
+            width:40px;
+        }
+        .custom-radio-button input:checked + label{
+            color: red;
+        }
+        .custom-radio-button label{
+            display:flex;
+            padding:10px 30px;
+            align-items: center;
+        }
+    </style>
+    
+    <div class="radio-wrapper">
+
+        <div class="custom-radio-button">
+            <input type="checkbox" id="radioBtn1" name="radioBtn">
+            <label for="radioBtn1">
+                Radio 1
+                <div class="tick-box">
+                    <div class="show">
+                        <div class="show-img">
+                            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21 6.285l-11.16 12.733-6.84-6.018 1.319-1.49 5.341 4.686 9.865-11.196 1.475 1.285z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </label>
+        </div>
+        <div class="custom-radio-button">
+            <input type="checkbox" id="radioBtn2" name="radioBtn">
+            <label for="radioBtn2">
+                Radio 2
+                <div class="tick-box">
+                    <div class="show">
+                        <div class="show-img">
+                            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21 6.285l-11.16 12.733-6.84-6.018 1.319-1.49 5.341 4.686 9.865-11.196 1.475 1.285z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </label>
+        </div>
+
+    </div>
+
+</body>
+</html>
